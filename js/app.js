@@ -14,11 +14,13 @@ counter = function() {
     var totalChars = value.length;
     var charCount = value.trim().length;
     var charCountNoSpace = value.replace(regex, '').length;
+    var noOfParas = value.replace(/\n$/gm, '').split(/\n/).length;
 
     $('#wordCount').html(wordCount);
     $('#totalChars').html(totalChars);
     $('#charCount').html(charCount);
     $('#charCountNoSpace').html(charCountNoSpace);
+    $('#noOfParas').html(noOfParas);
 };
 
 $(document).ready(function() {
