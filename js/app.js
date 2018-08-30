@@ -9,6 +9,10 @@ counter = function() {
         return;
     }
 
+    let facebook = 250;
+    let twitter = 280;
+    let google = 300;
+    let showSocialSites = true;
     var regex = /\s+/gi;
     var wordCount = value.trim().replace(regex, ' ').split(' ').length;
     var totalChars = value.length;
@@ -16,8 +20,17 @@ counter = function() {
     var charCountNoSpace = value.replace(regex, '').length;
     var noOfParas = value.replace(/\n$/gm, '').split(/\n/).length;
 
+    if (totalChars > 360) {
+        $('#showSocial').toggle(false);
+    } else {
+        $('#showSocial').toggle(true);
+    }
+
     $('#wordCount').html(wordCount);
     $('#totalChars').html(totalChars);
+    $('#facebook').html(facebook - totalChars);
+    $('#twitter').html(twitter - totalChars);
+    $('#google').html(google - totalChars);
     $('#charCount').html(charCount);
     $('#charCountNoSpace').html(charCountNoSpace);
     $('#noOfParas').html(noOfParas);
