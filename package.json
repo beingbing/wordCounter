@@ -1,0 +1,31 @@
+{
+  "name": "wordcounter",
+  "version": "1.0.0",
+  "description": "Its a website to count words and characters of text",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beingbing/wordCounter.git"
+  },
+  "keywords": [
+    "word",
+    "character",
+    "word-count",
+    "count",
+    "counter",
+    "character-counter"
+  ],
+  "author": "Samar Taj Shaikh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beingbing/wordCounter/issues"
+  },
+  "homepage": "https://github.com/beingbing/wordCounter#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.7"
+  }
+}
