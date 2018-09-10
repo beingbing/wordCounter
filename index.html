@@ -1,51 +1,35 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title>Word counter</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="assets/css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css" />
-      <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-      <link rel="icon" href="images/fav.gif" type="image/gif" sizes="16x16">
-      <link rel="stylesheet" href="./css/style.css">
-  </head>
+
+<head>
+  <title>Word counter</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="assets/css/vendor/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+  <link rel="icon" href="images/fav.gif" type="image/gif" sizes="16x16">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
 <body>
 
-
-  <!-- <header class="header">
-    <div class="row">
-      <div class="col-md-6">
-        <a href="#" class="logo"><img src="assets/images/logo.svg" alt=""></a>
-      </div>
-      <div class="col-md-6 d-flex align-items-center justify-content-end">
-          <a href="#" class="toggle-nav float-right">
-            <span class="toggle-round"></span>
-            <span class="toggle-round"></span>
-            <span class="toggle-round"></span>
-          </a>
-      </div>
-    </div>
-  </header> -->
-
-
-
+<div id="main">
   <div class="footer-count">
     <div class="row">
-      
       <div class="col-md-6">
-          <div id="result">
-            <ul class="left-countList no-margin">
-              <li>
-                  Words <span id="wordCount">0</span>
-              </li>
-              <li>
-                   Characters <span id="totalChars">0</span>
-              </li>
-              <li>
-                 Sentences <span id="total_sentences">0</span> 
-              </li>
-              <li>
+        <div id="result">
+          <ul class="left-countList no-margin">
+            <li>
+              Words <span id="wordCount">0</span>
+            </li>
+            <li>
+              Characters <span id="totalChars">0</span>
+            </li>
+            <li>
+              Sentences <span id="total_sentences">0</span>
+            </li>
+            <!-- <li>
                   <div style="font-weight:800">
                       <div id="readability">Show readability score.</div>
                   </div>
@@ -56,78 +40,103 @@
                       <ul id="topKeywords">
                       </ul>
                   </div>
-              </li>
-            </ul>
-              
-              
-              <!--  Characters (excluding trails): <span id="charCount">0</span><br/>
+              </li> -->
+          </ul>
+
+
+          <!--  Characters (excluding trails): <span id="charCount">0</span><br/>
               Characters (excluding all spaces): <span id="charCountNoSpace">0</span><br/>
               no of paragraphs: <span id="noOfParas">0</span><br/> -->
-              
-              
-              <!-- Reading Time: <span id="readingTime">0</span> -->
-              
-              
-          </div>
+
+
+          <!-- Reading Time: <span id="readingTime">0</span> -->
+
+
+        </div>
       </div>
 
       <div class="col-md-6">
         <div id="showSocial">
-            <ul class="right-countList float-right no-margin">
+          <ul class="right-countList float-right no-margin">
 
-              <li>
-                  SMS
-                <div class="inner-right-countList">
-                  250<span>/</span><span id="sms">250</span>
+            <li>
+              SMS
+              <div class="inner-right-countList">
+                250<span>/</span><span id="sms">250</span>
               </div>
 
               <li>
-                  Facebook
-               <div class="inner-right-countList">
-                 250<span>/</span><span id="facebook">250</span>
-               </div>
-                 
-              </li>
-              <li>
-                  Twitter
+                Facebook
                 <div class="inner-right-countList">
-                    280<span>/</span><span id="twitter">280</span>
+                  250<span>/</span><span id="facebook">250</span>
                 </div>
-                 
+
               </li>
               <li>
-                  Google
+                Twitter
+                <div class="inner-right-countList">
+                  280<span>/</span><span id="twitter">280</span>
+                </div>
+
+              </li>
+              <li>
+                Google
                 <div class="inner-right-countList">
                   300<span>/</span><span id="google">300</span>
                 </div>
               </li>
 
               <li>
-                <a href="#"><img src="assets/images/arrow.svg" width="20" alt=""></a>
+                <a href="#" onclick="openNav()"><img src="assets/images/arrow.svg" width="20" alt=""></a>
               </li>
-            </ul>
+          </ul>
         </div>
       </div>
 
     </div>
   </div>
+    
+      <div class="container-fluid">
+        <div class="count-textarea">
+          <div class="clearfix"><textarea class="inner-textarea" autofocus placeholder="Type your text here…" id='text'></textarea></div>
+          <!-- <button id="count">Count</button> -->
+        </div>
+      </div>
+    
+      <footer class="footer text-center">
+        <span>Text Counter by <a href="#" class="footer-logo"><img src="assets/images/msg-logo-blue.svg" alt=""></a></span>
+      </footer>
 
-<div class="container-fluid">
-  <div class="count-textarea">
-    <div class="clearfix"><textarea class="inner-textarea" autofocus placeholder="Type your text here…" id='text'></textarea></div>
-    <!-- <button id="count">Count</button> -->
-  </div>
 </div>
 
-<footer class="footer text-center">
-    <span>Text Counter by <a href="#" class="footer-logo"><img src="assets/images/msg-logo-blue.svg" alt=""></a></span>
-</footer>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
 
-    <script type="text/javascript" src="assets/js/vendor/lib/jquery.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/app.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/popper.min.js"></script>
-    <script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/custom.js"></script>
+
+  <script type="text/javascript" src="assets/js/vendor/lib/jquery.js"></script>
+  <script type="text/javascript" src="assets/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="assets/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="assets/js/custom.js"></script>
+  <script type="text/javascript" src="assets/js/vendor/app.js"></script>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginRight = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginRight = "0";
+    }
+  </script>
+
 
 </body>
+
 </html>
